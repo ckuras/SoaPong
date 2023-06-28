@@ -1,18 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://n63s12cekv75"]
+[gd_scene load_steps=5 format=3 uid="uid://n63s12cekv75"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_6kmyg"]
 [ext_resource type="PackedScene" uid="uid://b5nksx0kwkecl" path="res://paddle.tscn" id="1_gctyc"]
 [ext_resource type="PackedScene" uid="uid://c04vk5u5vobui" path="res://ball.tscn" id="3_5o24l"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaqe2"]
+size = Vector2(500, 20)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_6kmyg")
 
 [node name="PaddleP1" parent="." instance=ExtResource("1_gctyc")]
-position = Vector2(100, 200)
+position = Vector2(20, 240)
 
 [node name="PaddleP2" parent="." instance=ExtResource("1_gctyc")]
-position = Vector2(400, 200)
+position = Vector2(460, 240)
 player = 1
 
 [node name="Ball" parent="." instance=ExtResource("3_5o24l")]
-position = Vector2(250, 200)
+position = Vector2(250, 240)
+
+[node name="Walls" type="Area2D" parent="." groups=["wall"]]
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2(240, 0)
+shape = SubResource("RectangleShape2D_aaqe2")
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2(240, 480)
+shape = SubResource("RectangleShape2D_aaqe2")
