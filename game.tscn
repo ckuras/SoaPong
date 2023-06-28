@@ -11,4 +11,4 @@ position = Vector2(100, 200)
 
 [node name="PaddleP2" parent="." instance=ExtResource("1_gctyc")]
 position = Vector2(400, 200)
-player = 2
+player = 1
