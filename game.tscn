@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://n63s12cekv75"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_6kmyg"]
+[ext_resource type="PackedScene" uid="uid://b5nksx0kwkecl" path="res://paddle.tscn" id="1_gctyc"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_6kmyg")
+
+[node name="PaddleP1" parent="." instance=ExtResource("1_gctyc")]
+position = Vector2(100, 200)
+
+[node name="PaddleP2" parent="." instance=ExtResource("1_gctyc")]
+position = Vector2(400, 200)
+player = 2
