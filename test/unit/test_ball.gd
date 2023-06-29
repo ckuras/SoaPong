@@ -15,7 +15,7 @@ func test_wall_hit_turns_positive_y_velocity_negative():
 	area.add_to_group("wall")
 	var current_velocity = Vector2(1, 1)
 	
-	var new_velocity = _ball.velocity_from_wall_collision(area, current_velocity)
+	var new_velocity = _ball.velocity_from_area_collision(area, current_velocity)
 	
 	assert_eq(Vector2(1, -1), new_velocity)
 	
@@ -23,7 +23,7 @@ func test_wall_hit_turns_negative_y_velocity_positive():
 	area.add_to_group("wall")
 	var current_velocity = Vector2(1, -1)
 	
-	var new_velocity = _ball.velocity_from_wall_collision(area, current_velocity)
+	var new_velocity = _ball.velocity_from_area_collision(area, current_velocity)
 	
 	assert_eq(Vector2(1, 1), new_velocity)
 
