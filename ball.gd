@@ -8,7 +8,7 @@ var velocity = Vector2(-1, 0)
 func _ready():
 	pass
 
-func _process(delta):
+func _physics_process(delta):
 	position = position_in_next_frame(position, velocity, delta, speed)
 
 func _on_area_entered(area):
