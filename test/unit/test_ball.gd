@@ -1,6 +1,6 @@
 extends GutTest
 
-var ball = preload("res://ball.gd")
+var ball = preload("res://scripts/ball.gd")
 
 var area = Area2D.new()
 var _ball = ball.new()

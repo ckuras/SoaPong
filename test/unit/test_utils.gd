@@ -1,6 +1,6 @@
 extends GutTest
 
-var utils = preload("res://utils.gd")
+var utils = preload("res://scripts/utils.gd")
 
 var area = Area2D.new()
 
