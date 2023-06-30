@@ -32,4 +32,4 @@ func _process(delta):
 	
 	position += velocity * delta * speed
 	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	position.y = clamp(position.y, 60, screen_size.y - 60)

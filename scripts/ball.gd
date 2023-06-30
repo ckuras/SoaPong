@@ -5,7 +5,7 @@ enum PLAYER {
 	TWO
 }
 
-var utils = preload("res://utils.gd")
+var utils = preload("res://scripts/utils.gd")
 
 @export var speed = 200
 var velocity = Vector2(-1, 0)

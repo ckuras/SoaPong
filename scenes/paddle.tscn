@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5nksx0kwkecl"]
 
-[ext_resource type="Script" path="res://paddle.gd" id="1_qolhd"]
+[ext_resource type="Script" path="res://scripts/paddle.gd" id="1_qolhd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xax7b"]
 size = Vector2(20, 100)
@@ -10,3 +10,6 @@ script = ExtResource("1_qolhd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xax7b")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-10, -50, -10, 50, 10, 50, 10, -50)
