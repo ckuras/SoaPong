@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var ui = $ui
+
 var score = {
 	'player1': 0,
 	'player2': 0
@@ -22,4 +24,5 @@ func _on_player_2_goal_area_entered(area: Ball):
 
 func set_score(player):
 	score["player%s" % (player + 1)] += 1
+	ui.set_score(score)
 	print(score)

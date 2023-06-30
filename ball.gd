@@ -7,7 +7,7 @@ enum PLAYER {
 
 var utils = preload("res://utils.gd")
 
-@export var speed = 100
+@export var speed = 200
 var velocity = Vector2(-1, 0)
 const STARTING_POS = Vector2(240, 240)
 
@@ -21,7 +21,9 @@ func _on_area_entered(area):
 	velocity = velocity_from_area_collision(area, velocity)
 
 func reset(player: PLAYER):
+	velocity = Vector2.ZERO
 	position = STARTING_POS
+	await get_tree().create_timer(1.0).timeout
 	
 	# Point the velocity at the player upon whom got scored.
 	var new_x_component = -1
