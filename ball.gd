@@ -1,9 +1,15 @@
-extends Area2D
+class_name Ball extends Area2D
+
+enum PLAYER {
+	ONE,
+	TWO
+}
 
 var utils = preload("res://utils.gd")
 
 @export var speed = 100
 var velocity = Vector2(-1, 0)
+const STARTING_POS = Vector2(240, 240)
 
 func _ready():
 	pass
@@ -13,6 +19,15 @@ func _physics_process(delta):
 
 func _on_area_entered(area):
 	velocity = velocity_from_area_collision(area, velocity)
+
+func reset(player: PLAYER):
+	position = STARTING_POS
+	
+	# Point the velocity at the player upon whom got scored.
+	var new_x_component = -1
+	if (player == PLAYER.TWO):
+		new_x_component = 1
+	velocity = Vector2(new_x_component, 0)
 
 func position_in_next_frame(current_position, velocity, delta, speed):
 	var position_delta = velocity * delta * speed

@@ -19,7 +19,7 @@ position = Vector2(460, 240)
 player = 1
 
 [node name="Ball" parent="." instance=ExtResource("3_5o24l")]
-position = Vector2(250, 240)
+position = Vector2(240, 240)
 
 [node name="Walls" type="Area2D" parent="." groups=["wall"]]
 
