@@ -1,5 +1,7 @@
 extends Node2D
 
+signal scored(score)
+
 @onready var ui = $ui
 @onready var ball = $Ball
 
@@ -14,6 +16,7 @@ func _ready():
 		ball.reset(Ball.PLAYER.ONE)
 	else:
 		ball.reset(Ball.PLAYER.TWO)
+	self.scored.connect(ui.set_score)
 
 # The area is the ball
 func _on_player_1_goal_area_entered(area: Ball):
@@ -32,5 +35,4 @@ func _on_player_2_goal_area_entered(area: Ball):
 
 func set_score(player):
 	score["player%s" % (player + 1)] += 1
-	ui.set_score(score)
-	print(score)
+	emit_signal("scored", score)
